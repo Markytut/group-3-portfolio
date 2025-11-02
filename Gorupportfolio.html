@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team</title>
+
+    <!-- Google Fonts & Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      :root {
+        --primary: #000;
+        --secondary: #ff7c0a;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .team {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        margin-top: 100px;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .profiles {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .profile {
+        width: fit-content;
+        min-width: 350px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding-top: 20px;
+        margin: 50px;
+        max-height: 100px;
+        transition: 0.5s ease-in-out;
+      }
+
+      .profile img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid darkorange;
+        position: relative;
+        z-index: 2;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .details span {
+        font-weight: 300;
+      }
+
+      .card {
+        width: 320px;
+        height: 300px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #1c1c1c, #000);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        box-sizing: border-box;
+        padding: 20px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        border-radius: 6mm;
+         border: 3px solid darkorange;
+        position: relative;
+        transition: 0.3s ease-in-out;
+      }
+
+      .head {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: left;
+        margin-bottom: 5px;
+      }
+
+      .head img {
+        width: 60px;
+        height: 60px;
+        border-radius: 5mm;
+        border: 3px solid darkorange;
+      }
+
+      .name {
+        font-size: 16px;
+        font-weight: 200;
+        width: fit-content;
+        margin-left: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 0 8px;
+        border-radius: 3mm;
+      }
+
+      .content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 15px;
+        position: relative;
+      }
+
+      .role {
+        font-weight: 200;
+        font-size: 14px;
+      }
+
+      .icons {
+        backdrop-filter: blur(9px) saturate(180%);
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        border-radius: 7mm;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.35s;
+      }
+
+      .icons a:hover {
+        background: darkorange;
+        color: var(--primary);
+        border-radius: 50%;
+      }
+
+      .profile:hover {
+        max-height: 500px;
+      }
+
+      .profile:hover #picture {
+        border: 3px solid darkorange;
+        transform: scale(1.2);
+      }
+
+      .profile:hover .card {
+        display: flex;
+        animation: fade 0.9s ease-in-out;
+        background: linear-gradient(135deg, #2b2b2b, #000);
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* ✅ Added Google button styling */
+      .google-btn {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        padding: 12px 25px;
+        background-color: black;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        border: 3px solid darkorange;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        text-decoration: none;
+      }
+
+      .google-btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <div class="team">
+        <div class="title">WELCOME TO OUR GROUP WEBSITE</div>
+        <div class="profiles">
+          <!-- MEMBER 1 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="belen.jpg" alt="" />
+                <div class="name">Maybeline G. Asentista</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, accusamus fuga.
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/itsbelindaa_a"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/maybeline.garcia.739"><i class="fa-brands fa-facebook"></i></a>
+                <a href="belenresume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="belen.jpg" alt="" id="picture" />
+            <div class="details">
+              Maybeline G. Asentista
+              <span>Member</span>
+            </div>
+          </div>
+
+          <!-- MEMBER 2 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="alfred.jpg" alt="" />
+                <div class="name">Alfred Jhon M. Bautista</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                GUITAR PLAYER RNB LOVER VIRGIN
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/alfred.elf_0.0"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/alfred.jhon.1126"><i class="fa-brands fa-facebook"></i></a>
+                <a href="alfredresume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="alfred.jpg" alt="" id="picture" />
+            <div class="details">
+              Alfred Jhon M. Bautista
+              <span>Member</span>
+            </div>
+          </div>
+
+          <!-- MEMBER 3 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="mark.jpg" alt="" />
+                <div class="name">Mark Virgel S. Castillo</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                Sino ba kasi nag lock ng tagumpay at edukasyon ang susi?!
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/jesuismarky"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/mark.virgel.castillo.main"><i class="fa-brands fa-facebook"></i></a>
+                <a href="resume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="mark.jpg" alt="" id="picture" />
+            <div class="details">
+              Mark Virgel S. Castillo
+              <span>Member</span>
+            </div>
+          </div>
+
+          <!-- MEMBER 4 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="jam.jpg" alt="" />
+                <div class="name">Jamil Nash M. Manibog</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                Short description here.
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/hellboysvv"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/yaboinyx.29"><i class="fa-brands fa-facebook"></i></a>
+                <a href="jamilresume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="jam.jpg" alt="" id="picture" />
+            <div class="details">
+              Jamil Nash M. Manibog
+              <span>Member</span>
+            </div>
+          </div>
+
+          <!-- MEMBER 5 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="gio.jpg" alt="" />
+                <div class="name">Jomar E. Pulo</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                AKO AY POGI, POGI LANG UN LANG
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/itsgioo_o"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/jomar.espiritu.507"><i class="fa-brands fa-facebook"></i></a>
+                <a href="jomarresume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="gio.jpg" alt="" id="picture" />
+            <div class="details">
+              Jomar E. Pulo
+              <span>Group Leader</span>
+            </div>
+          </div>
+
+          <!-- MEMBER 6 -->
+          <div class="profile">
+            <div class="card">
+              <div class="head">
+                <img src="jerald.jpg" alt="" />
+                <div class="name">Jerald Sandagan</div>
+              </div>
+              <div class="content">
+                <div class="role">BSIT Student</div>
+                Short description here.
+              </div>
+              <div class="icons">
+                <a href="https://www.instagram.com/imnottt_jerald"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/jerald.sandagan"><i class="fa-brands fa-facebook"></i></a>
+                <a href="jeraldresume.html"><i class="fa-solid fa-file-lines"></i></a>
+              </div>
+            </div>
+            <img src="jerald.jpg" alt="" id="picture" />
+            <div class="details">
+              Jerald Sandagan
+              <span>Member</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ Google Button -->
+        <a href="https://www.google.com" target="_blank" class="google-btn">Favorite Website</a>
+
+      </div>
+    </div>
+  </body>
+</html>
