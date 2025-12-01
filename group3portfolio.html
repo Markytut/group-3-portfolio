@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GROUP 3</title>
+    <title>Group turi</title>
 
     <!-- Google Fonts & Font Awesome -->
     <link
@@ -28,6 +28,7 @@
         height: 100vh;
         margin: 0;
         padding: 0;
+        margin-top: 200px;
         background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
         color: white;
         font-family: "Poppins", sans-serif;
@@ -54,10 +55,20 @@
       .title {
         font-size: 40px;
         font-weight: 700;
-        margin-bottom: 40px;
-        margin-top: 100px;
+        margin-bottom: 20px;
+        margin-top: 200px;
         color: white;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .description {
+        font-size: 18px;
+        font-weight: 300;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 40px;
+        max-width: 700px;
+        line-height: 1.6;
       }
 
       .profiles {
@@ -83,12 +94,13 @@
       }
 
       .profile img {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         border: 2px solid darkorange;
         position: relative;
         z-index: 2;
+        transition: 0.3s ease-in-out;
       }
 
       .details {
@@ -117,7 +129,7 @@
         flex-direction: column;
         color: white;
         border-radius: 6mm;
-         border: 3px solid darkorange;
+        border: 3px solid darkorange;
         position: relative;
         transition: 0.3s ease-in-out;
       }
@@ -197,6 +209,7 @@
       .profile:hover #picture {
         border: 3px solid darkorange;
         transform: scale(1.2);
+        margin-bottom: 10px;
       }
 
       .profile:hover .card {
@@ -214,7 +227,6 @@
         }
       }
 
-      /* ✅ Added Google button styling */
       .google-btn {
         margin-top: 50px;
         margin-bottom: 100px;
@@ -233,13 +245,36 @@
       .google-btn:hover {
         transform: scale(1.05);
       }
+
+      .group-photo {
+        width: 40%;
+        aspect-ratio: 16 / 9;
+        border: 5px solid darkorange;
+        border-radius: 15px;
+        object-fit: cover;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+        transition: transform 0.4s ease;
+      }
+
+      .group-photo:hover {
+        transform: scale(1.03);
+      }
     </style>
   </head>
 
   <body>
     <div class="center">
       <div class="team">
+
         <div class="title">WELCOME TO OUR GROUP WEBSITE</div>
+
+        <p class="description">
+          This website shows our group members, their profiles, and their personal information. 
+          We made this page to introduce ourselves in a simple and creative way.
+        </p>
+
         <div class="profiles">
           <!-- MEMBER 1 -->
           <div class="profile">
@@ -250,7 +285,7 @@
               </div>
               <div class="content">
                 <div class="role">BSIT Student</div>
-               Kahit anong review ang gawin ko, ikaw parin laman ng isip ko
+                TODAY I CHOOSE PEACE PERO TIGNAN NATIN MAMAYA, MAAGA PA NAMAN
               </div>
               <div class="icons">
                 <a href="https://www.instagram.com/itsbelindaa_a"><i class="fa-brands fa-instagram"></i></a>
@@ -298,7 +333,7 @@
               </div>
               <div class="content">
                 <div class="role">BSIT Student</div>
-                Sino ba kasi nag lock ng tagumpay at edukasyon ang susi?!
+                SA DAMI NG TAONG WALANG PERA, NADAMAY PA AKO
               </div>
               <div class="icons">
                 <a href="https://www.instagram.com/jesuismarky"><i class="fa-brands fa-instagram"></i></a>
@@ -322,7 +357,7 @@
               </div>
               <div class="content">
                 <div class="role">BSIT Student</div>
-                Papunta ka palang, pahalit nga ko.
+                YUNG SWEET SIDE KO MATABANG NA
               </div>
               <div class="icons">
                 <a href="https://www.instagram.com/hellboysvv"><i class="fa-brands fa-instagram"></i></a>
@@ -366,11 +401,11 @@
             <div class="card">
               <div class="head">
                 <img src="jerald.jpg" alt="" />
-                <div class="name">Jerald Sandagan</div>
+                <div class="name">Jerald D. Sandagan</div>
               </div>
               <div class="content">
                 <div class="role">BSIT Student</div>
-                Walang missed actitives pero miss ko na siya
+                I miss yo-- WAG NALANG.
               </div>
               <div class="icons">
                 <a href="https://www.instagram.com/imnottt_jerald"><i class="fa-brands fa-instagram"></i></a>
@@ -380,18 +415,19 @@
             </div>
             <img src="jerald.jpg" alt="" id="picture" />
             <div class="details">
-              Jerald Sandagan
+              Jerald D. Sandagan
               <span>Member</span>
             </div>
           </div>
+
         </div>
 
-        <!-- ✅ Google Button -->
+        <img src="kupal.jpg" alt="Group Photo" class="group-photo" />
+
         <a href="https://www.google.com" target="_blank" class="google-btn">Favorite Website</a>
 
       </div>
     </div>
   </body>
 </html>
-
 
